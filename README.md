@@ -91,7 +91,8 @@ This helped me understand:
 
 ## Project Structure
 
-cryptosden/
+
+  cryptosden/
 ├── server/
 │ ├── routes/
 │ ├── controllers/
