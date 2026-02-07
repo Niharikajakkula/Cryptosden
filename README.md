@@ -1,57 +1,96 @@
 # Cryptosden
 
-Cryptosden is a learning-focused, full-stack MERN application built to understand how
-cryptocurrency platforms are architected, including authentication, simulated trading,
-portfolio tracking, and community features.
+Cryptosden is a **learning-focused full-stack MERN application** built to understand how cryptocurrency platforms are structured internally.  
+The project focuses on **backend API design, authentication, algorithmic data processing, and frontend–backend integration**, rather than production deployment.
+
+This repository represents my **hands-on exploration of full-stack development and open-source practices**.
 
 ---
 
 ## Project Scope & Disclaimer
-This project is created **for educational purposes only**.
 
-- It does **not** perform real cryptocurrency trading
-- Wallets, balances, and transactions are **simulated**
-- Security features are implemented to understand concepts, not for production use
-- No real financial data or assets are involved
+This project is created **strictly for educational purposes**.
+
+- No real cryptocurrency trading is performed  
+- Wallet balances, orders, and transactions are **simulated**
+- Market data is fetched from public APIs (CoinGecko)
+- No real financial assets or personal data are involved
 
 ---
 
 ## Overview
-Cryptosden was built to explore real-world full-stack development workflows using the
-MERN stack. The focus of this project is on backend API design, authentication flows,
-role-based access, frontend integration, and overall system structure rather than UI
-polish or production deployment.
+
+The goal of Cryptosden was to move beyond tutorials and build a **complete system end-to-end**:
+
+- Designing REST APIs
+- Implementing authentication flows
+- Structuring database schemas
+- Applying basic mathematical logic to market data
+- Connecting frontend and backend in a real project
+
+The focus is on **understanding system design and data flow**, not UI polish or scale.
 
 ---
 
 ## Key Features
+
 - User authentication using JWT
-- Role-based access (User / Trader / Admin)
+- Role-based access control (User / Admin)
 - Simulated cryptocurrency wallets and transactions
-- Basic trading logic (market / limit style orders – simulated)
 - Portfolio overview and basic analytics
 - Community discussion posts and polls
-- Admin dashboard for moderation and user management
-- Periodic market data fetched from public APIs (CoinGecko)
+- Periodic market data fetching from CoinGecko
+
+---
+
+## Algorithmic & Mathematical Components
+
+To better understand how cryptocurrency metrics are derived, I implemented **simple rule-based and mathematical scoring logic**.
+
+### Trust Score (Experimental)
+
+A custom scoring function that combines:
+- Market capitalization
+- 24h trading volume
+- Price volatility
+
+The intent was to learn how **multiple indicators can be normalized and combined** into a single metric for comparison.
+
+> This is an experimental learning implementation, not a financial recommendation system.
+
+---
+
+### Emotional Volatility Index (EVI)
+
+A basic metric designed to explore **market sentiment patterns** using:
+- Price change percentage
+- Volume-to-market-cap ratio
+
+This helped me understand:
+- Normalization
+- Threshold-based logic
+- Interpreting numerical signals from real-world data
 
 ---
 
 ## Tech Stack
-**Frontend**
+
+### Frontend
 - React
 - JavaScript
 - Tailwind CSS
 - Axios
 
-**Backend**
+### Backend
 - Node.js
 - Express.js
-- MongoDB with Mongoose
-- JWT-based authentication
+- MongoDB (Mongoose)
+- JWT Authentication
 
 ---
 
 ## Project Structure
+
 cryptosden/
 ├── server/
 │ ├── routes/
@@ -67,56 +106,40 @@ cryptosden/
 └── README.md
 
 
-The backend handles API logic, authentication, and database interaction, while the
-frontend consumes these APIs and manages UI state.
+The backend handles authentication, API logic, and database interaction,  
+while the frontend consumes these APIs and manages UI state.
 
 ---
 
 ## What I Built & Learned
+
 Through this project, I independently worked on:
 
 - Designing RESTful APIs using Express
 - Implementing JWT-based authentication and authorization
 - Structuring MongoDB schemas and relationships
-- Connecting frontend and backend using Axios
-- Managing application state in React
-- Understanding how large applications are broken into modules
-- Improving code organization and documentation
+- Fetching and processing external API data
+- Applying mathematical logic to real datasets
+- Connecting frontend and backend in a full-stack application
+- Writing documentation and organizing code
 
-This project helped me move beyond tutorials and understand how full-stack systems work
-end-to-end.
+This project helped me understand how **large applications are broken into smaller, manageable modules**.
 
 ---
 
 ## How to Run Locally
+
 1. Clone the repository
-2. Install dependencies:
+   ```bash
+   git clone <repo-url>
+Install dependencies
+
 npm install
+Configure environment variables in a .env file
 
-3. Configure environment variables in a `.env` file
-4. Start the backend server:
+Start backend server
+
 npm run server
+Start frontend client
 
-5. Start the frontend client:
 npm start
-
-
----
-
-## Future Improvements
-- Add unit and integration tests
-- Improve error handling and validation
-- Enhance API documentation
-- Refactor services for better scalability
-- Improve UI/UX consistency
-
----
-
-## Open-Source Note
-This repository is structured to follow open-source best practices and is open to
-learning-oriented improvements, documentation enhancements, and refactoring.
-
----
-
-## License
-MIT License
